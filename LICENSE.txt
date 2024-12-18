@@ -3,7 +3,7 @@
 
  Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>
  Everyone is permitted to copy and distribute verbatim copies
- of this license document, but changing it is not allowed.
+ of this license document, but changing it is not allowed...
 
 
   This version of the GNU Lesser General Public License incorporates
@@ -75,7 +75,7 @@ layouts and accessors, or small macros, inline functions and templates
 
    b) Accompany the object code with a copy of the GNU GPL and this license
    document.
-
+..
   4. Combined Works.
 
   You may convey a Combined Work under terms of your choice that,
@@ -96,7 +96,7 @@ the following:
    these notices, as well as a reference directing the user to the
    copies of the GNU GPL and this license document.
 
-   d) Do one of the following:
+   d) Do one of the following::::
 
        0) Convey the Minimal Corresponding Source under the terms of this
        License, and the Corresponding Application Code in a form
