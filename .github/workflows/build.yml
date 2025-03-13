@@ -1,14 +1,17 @@
-name: SonarQube Cloud
+name: Build
+
 on:
   push:
-    path:
-      - 'sonar-scanner-maven/maven-multilingual/**'
+    branches:
+      - main
   pull_request:
     types: [opened, synchronize, reopened]
+
 jobs:
   build:
     name: Build and analyze
     runs-on: ubuntu-latest
+    
     steps:
       - uses: actions/checkout@v4
         with:
@@ -18,7 +21,7 @@ jobs:
         with:
           java-version: 17
           distribution: 'zulu' # Alternative distribution options are available.
-      - name: Cache SonarQube Cloud packages
+      - name: Cache SonarQube packages
         uses: actions/cache@v4
         with:
           path: ~/.sonar/cache
@@ -32,6 +35,6 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
       - name: Build and analyze
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: cd "sonar-scanner-maven/maven-multilingual" && mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=yj12s_test
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=yj12s_sonar-scanning-examples_5015f3b7-47e4-4b26-ad99-cc05e4ff28bd -Dsonar.projectName='sonar-scanning-examples'
