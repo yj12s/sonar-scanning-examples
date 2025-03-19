@@ -4,14 +4,18 @@
  */
 package com.acme.multilingual;
 
+import java.util.logging.Logger;
+
 public class HelloWorld {
 
+  private static final Logger LOGGER = Logger.getLogger(HelloWorld.class.getName());
+
   public void sayHello() {
-    System.out.println("Hello World!");
+    LOGGER.info("Hello World!");
   }
 
   void notCovered() {
-    System.out.println("This method is not covered by unit tests");
+    LOGGER.info("This method is not covered by unit tests");
   }
 
 }
