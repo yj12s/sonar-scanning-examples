@@ -1,0 +1,6 @@
+{
+    "sonarlint.connectedMode.project": {
+        "connectionId": "https-sonar-ee-curvc-com",
+        "projectKey": "yj12s_sonar-scanning-examples_939115ca-67c6-4a38-b776-5ff8cf41b5d2"
+    }
+}
